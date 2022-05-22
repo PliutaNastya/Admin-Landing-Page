@@ -1,0 +1,501 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;600;700&display=swap');
+
+$primary-header-color: rgb(60, 141, 188);
+$button-color: $primary-header-color;
+$aside-color: rgb(34, 45, 50);
+$content-background-color: rgb(236, 240, 245);
+$xxl-width: 1720px;
+$xl-width: 1280px;
+$l-width: 960px;
+$md-width: 787px;
+$sm-width: 600px;
+$xs-width: 520px;
+
+@mixin button($bgc) {
+    background-color: $bgc;
+    &:hover {
+        background-color: darken($bgc, 15%);
+        transition: all 0.3s ease;
+    }
+}
+
+@mixin icon($width, $height) {
+    width: $width;
+    height: $height;
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: inline-block;
+}
+
+@mixin image($width, $height) {
+    height: $width;
+    width: $height;
+    border-radius: 50%;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+// -----------------------Reset styles-------------------------------------------------
+*{
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+ *, *:before, *:after{
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+:focus, :active {outline: none;}
+a:focus,a:active {outline: none;}
+nav, footer, header, aside {display: block;}
+html, body{
+    height: 100%;
+    width: 100%;
+    font-size: 100%;
+    line-height: 1;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+input, button, textarea {font-family: inherit;}
+input::-ms-clear{display: none;}
+button{cursor: pointer;}
+button::-moz-focus-inner{padding: 0;border: 0;}
+a, a:visited{text-decoration: none;}
+a:hover{text-decoration: none;}
+img{vertical-align: top;}
+h1, h2, h3, h4, h5, h6 {font-size: inherit; font-weight: 400;}
+
+//  ----------------------------------------------------------------------------------------------
+
+body, html {
+    font-size: 10px;
+    font-family: 'Nunito', sans-serif;
+    @media (max-width: $xl-width) {
+        font-size: 8px;
+    }
+}
+
+.icon{
+    @include icon(20px, 20px);
+
+    &_burger{
+        background-image: url(../assets/icon_burger.svg);
+    }
+    &_cards{
+        background-image: url(../assets/icon_cards.svg);
+    }
+    &_users{
+        background-image: url(../assets/icon_users.svg);
+    }
+    &_admin{
+        background-image: url(../assets/icon_admin.svg);
+    }
+}
+
+.button{
+    @include button($button-color);
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: #fff;
+    margin-top: 20px;
+    font-size: 2rem;
+}
+
+
+// ---------------------------HEADER--------------------------------------------------------------
+
+.header {
+    background-color: $primary-header-color;
+    display: flex;
+    color: #fff;
+    align-items: center;
+    @media (max-width: $sm-width) {
+        flex-wrap: wrap;
+    }
+    &__logo{
+        flex: 0 0 300px;
+        background-color: darken($primary-header-color, 10%);
+        font-size: 2.6rem;
+        font-weight: 700;
+        text-align: center;
+        line-height: 70px;
+        @media (max-width: $xl-width) {
+            flex-basis: 250px;
+        }
+        @media (max-width: $md-width) {
+            flex-basis: 200px;
+        }
+        @media (max-width: $sm-width) {
+            flex: 0 1 100%;
+        }
+            &_abbr{
+                font-weight: 200;
+            }
+    }
+
+    &__nav{
+        display: flex;
+        flex: 1 1 auto;
+        align-items: center;
+        font-size: 2rem;
+        margin-left: 20px;
+        @media (max-width: $sm-width) {
+            flex: 0 1 100%;
+            padding: 10px 0px;
+        }
+    }
+}
+
+.nav{
+    &__burger{
+        flex: 1 1 auto;
+    }
+    &__menu{
+        display: flex;
+        align-items: center;
+    }
+    &__item{
+        position: relative;
+    }
+    &__link{
+        margin: 0px 30px;
+        @media (max-width: $xl-width) {
+            margin: 0px 15px;
+        }
+        @media (max-width: $xs-width) {
+            margin: 0px 10px;
+        }
+    }
+    &__insert{
+        position: absolute;
+        top: -5px;
+        right: 8px;
+        font-size: 1.4rem;
+            &_cards{
+                background-color: #2dff2d;
+            }
+            &_users{
+                background-color: #e69b11;
+            }
+            &_admin{
+                background-color: rgb(243, 45, 45);
+            }
+    }
+
+    &__admin{
+        display: flex;
+        align-items: center;
+        &_img{
+            @include image(50px, 50px);
+            background-image: url(../assets/header__img.jpg);
+            @media (max-width: $sm-width) {
+                margin-right: 20px;
+            }
+        
+            img{
+                display: none;
+            }
+        }
+
+        &_name{
+            margin: 0px 40px 0px 10px;
+            color: inherit;
+            @media (max-width: $xl-width) {
+                margin: 0px 20px 0px 10px;
+            }
+            @media (max-width: $sm-width) {
+                display: none;
+            }
+        }
+    }
+}
+
+// ---------------------------MAIN-BLOCK---------------------------------------------------------------
+
+.main-block{
+    display: flex;
+    &__content{
+        flex:  1 1 auto;
+        min-height: calc(100vh - 130px);
+    }
+}
+.sidebar {
+    flex: 0 0 300px;
+    font-size: 2rem;
+    background-color: $aside-color;
+    color: #fff;
+    @media (max-width: $xl-width) {
+        flex-basis: 250px;
+    }
+    @media (max-width: $md-width) {
+        flex-basis: 200px;
+    }
+    @media (max-width: $sm-width) {
+        display: none;
+    }
+
+    &__admin{
+        display: flex;
+        align-items: center;
+        padding: 30px 20px 20px 20px;
+        @media (max-width: $xl-width) {
+            padding: 20px 10px;
+        }
+        &_img{
+            @include image(100px, 100px);
+            background-image: url(../assets/header__img.jpg);
+            @media (max-width: $xl-width) {
+                @include image(50px, 50px);
+            }
+            img{
+                display: none;
+            }
+        }
+        &-content{
+            padding-left: 20px;
+            text-align: center;
+            @media (max-width: $xl-width) {
+                padding-left: 10px;
+            }
+
+            &_active{
+                margin-top: 20px;
+                position: relative;
+                font-weight: 200;
+                @media (max-width: $xl-width) {
+                    margin-top: 5px;
+                }
+                &::before{
+                    content: "";
+                    width: 10px;
+                    height: 10px;
+                    border-radius: 50%;
+                    background-color: #2dff2d;
+                    position: absolute;
+                    top: calc(50% - 7px);
+                    left: 10px;
+                }
+            }
+        }
+    }
+
+    &__title{
+        text-transform: uppercase;
+        line-height: 40px;
+        font-size: 2rem;
+        background-color: darken($aside-color, 10%);
+        padding-left: 20px;
+        color: #ccc;
+    }
+
+    &__nav{
+        padding: 20px;
+        list-style-type: none;
+        a{
+            color: #fff;
+        }
+    }
+
+    &__link{
+        padding-left: 30px;
+        position: relative;
+        margin-bottom: 30px;
+        &::before{
+            content: "";
+            @include icon(20px, 20px);
+            position: absolute;
+            left: 0;
+            top: 0;
+            @media (max-width: $xl-width) {
+                @include icon(15px, 15px);
+            }
+        }
+        &::after{
+            content: "";
+            @include icon(20px, 20px);
+            background-image: url(../assets/icon_arrow.svg);
+            position: absolute;
+            top: calc(50% - 10px);
+            right: 0;
+            @media (max-width: $xl-width) {
+                @include icon(15px, 15px);
+                top: calc(50% - 7.5px);
+            }
+        }
+            &_admins::before{
+                background-image: url(../assets/icon_admin.svg);
+            }
+            &_users::before{
+                background-image: url(../assets/icon_users.svg);
+            }
+            &_cards::before{
+                background-image: url(../assets/icon_cards.svg);
+            }
+            &_categories::before{
+                background-image: url(../assets/icon_categories.svg);
+            }
+        }
+}
+.content{
+    background-color: $content-background-color;
+    padding: 20px 20px 40px 20px;
+
+    &__header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+        a{
+            color: inherit;
+        }
+        @media (max-width: $l-width) {
+            flex-wrap: wrap;
+        }
+        &-title{
+            font-size: 2.4rem;
+            font-weight: 600;
+            @media (max-width: $l-width) {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+        }
+        &-block{
+            display: flex;
+            font-size: 1.8rem;
+            @media (max-width: $l-width) {
+                width: 100%;
+                border-radius: 5px;
+                line-height: 40px;
+                background-color: #ccc;
+                padding-left: 10px;
+            }
+        }
+        &_admin{
+            position: relative;
+            padding-left: 20px;
+            font-weight: 600;
+            &::before{
+                content: "";
+                @include icon(15px, 15px);
+                background-image: url(../assets/icon_admin.svg);
+                position: absolute;
+                top: calc(50% - 7.5px);
+                left: 0;
+            }
+        }
+        &_arrow{
+            margin: 0px 10px;
+        }
+    }
+}
+
+.block {
+    &__row{
+        display: flex;
+        flex-wrap: wrap;
+        margin: -10px -10px;
+    }
+    &__columns{
+        flex: 0 1 50%;
+        padding: 10px 10px;
+        @media (max-width: $l-width) {
+            flex: 0 1 100%;
+        }
+    }
+    &__column{
+        background-color: #fff;
+        padding: 10px;
+        border-radius: 5px;
+        border-top: 2px solid #ccc;
+        box-shadow: 1px 1px 10px #ccc;
+    }
+}
+
+.column {
+    font-size: 2rem;
+    &__name{
+        font-size: 2.2rem;
+    }
+
+    &__form{
+        background-color: #fff;
+    }
+    &__label{
+        display: block;
+        margin: 30px 0px 10px 0px;
+        font-weight: 700;
+    }
+
+    &__input{
+        display: inline-block;
+        height: 40px;
+        width: 100%;
+        outline: 1px solid #ccc;
+        padding-left: 10px;
+        
+    }
+
+    &__border{
+        height: 40px;
+        border-bottom: 1px solid #cccccc80;
+    }
+
+    &__button{
+        display: inline-block;
+    }
+}
+.insert{
+    position: relative;
+    &::after{
+        content: "";
+        position: absolute;
+        @include image(20px, 20px);
+        border-radius: 0;
+        top: calc(50% - 10px);
+        right: 0;
+    }
+    &__icon_dot::after{
+        background-image: url(../assets/icon_dot.svg);
+    }
+    &__icon_pass::after{
+        background-image: url(../assets/icon_pass.svg);
+    }
+}
+.footer{
+    padding: 10px 20px;
+    background-color: #fff;
+    font-size: 2rem;
+    display: flex;
+    justify-content: space-between;
+    line-height: 40px;
+    font-weight: 700;
+    @media (max-width: $md-width) {
+        flex-wrap: wrap;
+        text-align: center;
+        justify-content: center;
+        line-height: 30px;
+    }
+    
+    &__develop{
+        @media (max-width: $md-width) {
+            width: 100%;
+        }
+        &_active{
+            color: $primary-header-color;
+        }
+    }
+
+    &__version{
+        font-weight: 400;
+        &_bold{
+            font-weight: 700;
+        }
+    }
+}
+
+input[type="file"]{
+    display: none;
+}

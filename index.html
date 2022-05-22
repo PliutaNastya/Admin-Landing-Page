@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.min.css">
+    <title>Administrator Page</title>
+</head>
+<body>
+    <header class="header">
+		<h1 class="header__logo">Innovations<span class="header__logo_abbr">ADM</span></h1>
+		<div class="header__nav nav">
+			<div class="nav__burger"><a href="#"><span class="icon icon_burger"></span></a></div>
+			<div class="nav__menu">
+				<div class="nav__item">
+					<a href="#" class="nav__link"><span class="icon icon_cards"></span></a>
+					<div class="nav__insert nav__insert_cards">345</div>
+				</div>
+				<div class="nav__item">
+					<a href="#" class="nav__link"><span class="icon icon_users"></span></a>
+					<div class="nav__insert nav__insert_users">3</div>
+				</div>
+				<div class="nav__item">
+					<a href="#" class="nav__link"><span class="icon icon_admin"></span></a>
+					<div class="nav__insert nav__insert_admin">125</div>
+				</div>
+				<div class="nav__admin">
+					<a href="" class="nav__admin_img">
+						<img src="assets/header__img.jpg" alt="Photo administrator">
+					</a>
+					<a href="" class="nav__admin_name">Administrator</a>
+				</div>
+			</div>
+		</div>
+	</header>
+	<div class="main-block">
+		<aside class="main-block__sidebar sidebar">
+			<div class="sidebar__admin">
+				<div class="sidebar__admin_img">
+					<img src="assets/header__img.jpg" alt="">
+				</div>
+				<div class="sidebar__admin-content">
+					<div class="sidebar__admin-content_name">Administrator</div>
+					<div class="sidebar__admin-content_active">Online</div>
+				</div>
+			</div>
+			<h2 class="sidebar__title">Main navigation</h2>
+			<ul class="sidebar__nav">
+				<li class="sidebar__link sidebar__link_admins"><a href="">Admins</a></li>
+				<li class="sidebar__link sidebar__link_users"><a href="">Users</a></li>
+				<li class="sidebar__link sidebar__link_cards"><a href="">Cards</a></li>
+				<li class="sidebar__link sidebar__link_categories"><a href="">Categories</a></li>
+			</ul>
+		</aside>
+		<div class="main-block__content">
+			<div class="content">
+				<div class="content__header">
+					<a href="" class="content__header-title">Profile</a>
+					<div class="content__header-block">
+						<a href="#" class="content__header_admin">Admin</a>
+						<span class="content__header_arrow">></span>
+						<a href="#" class="content__header_profile">Profile</a>
+					</div>
+				</div>
+				<div class="content__block block">
+					<div class="block__row">
+						<div class="block__columns">
+							<div class="block__column column">
+								<div class="column__name">Edit Username</div>
+								<form action="#" class="column__form">
+									<label class="column__label" for="username">New username</label>
+									<div class="column__insert insert insert__icon_dot">
+										<input type="text" class="column__input" placeholder="Username" id="username">
+									</div>
+									<label class="column__label" for="usernamePassword">Password</label>
+									<div class="column__insert insert insert__icon_dot">
+										<input type="password" class="column__input" placeholder="Password" id="usernamePassword">
+									</div>
+									<div class="column__border"></div>
+									<input type="submit" class="button" value="Submit">
+								</form>
+							</div>
+						</div>
+						<div class="block__columns">
+							<div class="block__column column">
+								<div class="column__name">Edit Email</div>
+								<form action="#" class="column__form">
+									<label class="column__label" for="email">New email</label>
+									<input type="email" class="column__input" placeholder="Email" id="email">
+									<label class="column__label" for="emailPassword">Password</label>
+									<div class="column__insert insert insert__icon_pass">
+										<input type="password" class="column__input" placeholder="Password" id="emailPassword">
+									</div>
+									<div class="column__border"></div>
+									<input type="submit" class="button" value="Submit">
+								</form>
+							</div>
+						</div>
+						<div class="block__columns">
+							<div class="block__column column">
+								<div class="column__name">Edit Password</div>
+								<form action="#" class="column__form">
+									<label class="column__label" for="oldPassword">Old password</label>
+									<div class="column__insert insert insert__icon_dot">
+										<input type="password" class="column__input" placeholder="Password" id="oldPassword">
+									</div>
+									<label class="column__label" for="newPassword">New password</label>
+									<div class="column__insert insert insert__icon_pass">
+										<input type="password" class="column__input" placeholder="Password" id="newPassword">
+									</div>
+									<label class="column__label" for="confirmPassword">Confirm password</label>
+									<div class="column__insert insert insert__icon_pass">
+										<input type="password" class="column__input" placeholder="Password" id="confirmPassword">
+									</div>
+									<div class="column__border"></div>
+									<input type="submit" class="button" value="Submit">
+								</form>
+							</div>
+						</div>
+						<div class="block__columns">
+							<div class="block__column column">
+								<div class="column__name">Edit Image</div>
+								<label class="column__label button column__button" for="fileImage">Please open the image</label>
+								<input type="file" id="fileImage">
+								<div class="column__border"></div>
+								<input type="submit" class="button" value="Submit">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="content__footer footer">
+				<div class="footer__develop">Develop by <a href="#" target="_blank" class="footer__develop_active">onCreate Studio</a> 2015.</div>
+				<div class="footer__version"><span class="footer__version_bold">Version</span> 1.0</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
